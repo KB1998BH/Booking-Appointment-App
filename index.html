@@ -48,6 +48,9 @@
         phone: phone,
         Timeforcall:Timeforcall,
       };
+      
+      // Retrieve existing user details from local storage
+      var existingUserDetails = JSON.parse(localStorage.getItem('userDetails')) || {};
 
       // Store user details in local storage
       localStorage.setItem('userDetails', JSON.stringify(userDetails));

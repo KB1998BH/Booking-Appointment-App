@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>  
+<style>
+.center{
+  text-align:center;
+  color:red;
+  }
+  input{
+    font-size: 30px;
+    color:black;
+    width:1000px;
+  }
+  </style>
+</head>
+
+<body>
+        <h1 class="center">Book a Call</h1>
+        <p><b>Book a call slot our representative will call you within 1 hr of selected time</b></p>
+ <form id="form__submit" action="/action_page.php">
+    <div class="container">
+        <div class="card-border">
+            <label for="fname">Name:</label><br>
+            <input type="text" id="fname" name="fname" ><br>
+            <label for="lname">Email Id:</label><br>
+            <input type="email" id="lname" name="lname" ><br>
+            <label for="Phone">Phone:</label><br>
+            <input type="phone" id="Phone" name="fname" ><br> 
+            <label for="calling">Time for Call</label><br>
+            <input type="datetime-local" id="calling"><br><br>
+           <input type="button" onclick="submitForm()" value="Submit form" class="btn btn-primary">
+        </div>
+    </div>
+</form>
+<script>
+   
+   function submitForm() {
+			//  document.getElementById("form__submit").submit();
+       var name = document.getElementById("fname").value;
+      var email = document.getElementById("lname").value;
+      var phone = document.getElementById("Phone").value;
+      var Timeforcall = document.getElementById("calling").value;
+
+      // Create an object to store user details
+      var userDetails = {
+        name: name,
+        email: email,
+        phone: phone,
+        Timeforcall:Timeforcall,
+      };
+
+      // Store user details in local storage
+      localStorage.setItem('userDetails', JSON.stringify(userDetails));
+
+      document.getElementById("form__submit").submit();
+	}
+</script>
+</body>
+
+</html>
